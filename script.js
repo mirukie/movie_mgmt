@@ -12,6 +12,7 @@ class Movie {
 //add a movie OBJECT to the allMovies array
 let addMovie = (movie) => {
     allMovies[allMovies.length] = movie;
+    console.log("A new movie has been added");
 }
 
 //iterate through all elements of allMovies array
@@ -25,22 +26,23 @@ let printMovies = () => {
         console.log(movieData.title + ", rating of " + movieData.rating + ", haveWatched: " + movieData.haveWatched);
         ++count;
     }
-    console.log("You have " + count + " movies in total.");
+    console.log("\nYou have " + count + " movies in total.");
 }
 
 
 //print out to console, only the movies that has a rating higher than rating(argument)
 //print out the total number of matches
 let highRatings = (rating) => {
+    console.log("Printing movies that have a rating higher than " + rating + "...");
     let count = 0;
     for (i = 0; i < allMovies.length; i++) {
         let movieData = allMovies[i];
-        if (movieData.rating >= rating) {
+        if (movieData.rating > rating) {
             console.log(movieData.title + " has a rating of " + movieData.rating);
             ++count;
         }
     }
-    console.log("In total, there are " + count + " matches.");
+    console.log("\nIn total, there are " + count + " matches.");
 }
 
 
@@ -54,6 +56,7 @@ let changeWatched = (title) => {
             } else {
                 movieData.haveWatched = false;
             }
+            console.log("changing the status of the movie...");
         }
     }
 }
